@@ -1,0 +1,59 @@
+#splash {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 99;
+  animation: splashOut 1s ease 2s forwards;
+}
+
+@keyframes splashOut {
+  to { opacity: 0; visibility: hidden; }
+}
+
+header {
+  margin: 1rem;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#clock {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+select {
+  background: transparent;
+  color: var(--text);
+  border: none;
+  font-size: 1rem;
+}
+
+#timeline {
+  padding: 1rem;
+}
+
+.block {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 18px;
+  background: var(--card);
+  animation: rise 0.4s ease;
+}
+
+@keyframes rise {
+  from { opacity:0; transform: translateY(10px); }
+  to { opacity:1; transform: translateY(0); }
+}
+
+.block.lab { border-left: 4px solid var(--lab); }
+.block.break { background: var(--break); color: var(--muted); }
+
+.block.live {
+  box-shadow: 0 0 0 1px var(--accent), 0 0 12px var(--accent);
+}

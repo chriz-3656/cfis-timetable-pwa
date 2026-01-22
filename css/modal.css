@@ -1,0 +1,24 @@
+#modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  align-items: flex-end;
+}
+
+#modal.show {
+  display: flex;
+}
+
+.sheet {
+  background: var(--card);
+  width: 100%;
+  border-radius: 20px 20px 0 0;
+  padding: 1.5rem;
+  animation: rise 0.3s ease;
+}
+
+@keyframes rise {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>CFIS Timetable</title>
+
+<link rel="manifest" href="manifest.json" />
+<link rel="icon" href="assets/icons/icon-192.png">
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/glass.css">
+<link rel="stylesheet" href="css/app.css">
+
+<meta name="theme-color" content="#0b0f14" />
+</head>
+
+<body>
+
+<!-- SPLASH -->
+<div id="splash">
+  <div class="logo">CFIS</div>
+  <span>Semester 2 Timetable</span>
+</div>
+
+<header class="glass">
+  <div>
+    <h1 id="dayTitle"></h1>
+    <span id="clock"></span>
+  </div>
+  <select id="daySelect"></select>
+</header>
+
+<main id="timeline"></main>
+
+<div id="modal"></div>
+
+<script type="module" src="js/ui.js"></script>
+<script src="js/pwa.js"></script>
+
+</body>
+</html>
