@@ -10,6 +10,20 @@
   animation: splashOut 1s ease 2s forwards;
 }
 
+/* Loading spinner for splash screen */
+.logo {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
 @keyframes splashOut {
   to { opacity: 0; visibility: hidden; }
 }
@@ -22,6 +36,33 @@ header {
   align-items: center;
 }
 
+.header-controls {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+#installBtn {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+#installBtn:hover {
+  background: #3b82f6;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(79, 156, 255, 0.3);
+}
+
+#installBtn:active {
+  transform: translateY(0);
+}
+
 #clock {
   font-size: 0.9rem;
   color: var(--muted);
@@ -32,6 +73,14 @@ select {
   color: var(--text);
   border: none;
   font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+select:hover {
+  background: rgba(255,255,255,0.1);
 }
 
 #timeline {
@@ -44,6 +93,8 @@ select {
   border-radius: 18px;
   background: var(--card);
   animation: rise 0.4s ease;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 @keyframes rise {
@@ -56,4 +107,15 @@ select {
 
 .block.live {
   box-shadow: 0 0 0 1px var(--accent), 0 0 12px var(--accent);
+}
+
+/* Enhanced block hover effects */
+.block:not(.break):hover {
+  background: rgba(255,255,255,0.08);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.block.live:hover {
+  box-shadow: 0 0 0 1px var(--accent), 0 0 12px var(--accent), 0 4px 12px rgba(0,0,0,0.2);
 }

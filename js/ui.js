@@ -1,5 +1,12 @@
 import { SUBJECTS, TIMETABLE } from "./data.js";
-import { openModal } from "./modal.js";
+import { openModal, closeModal } from "./modal.js";
+
+// Add keyboard support
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeModal();
+  }
+});
 
 const timeline = document.getElementById("timeline");
 const select = document.getElementById("daySelect");
@@ -37,7 +44,7 @@ function render(day){
       el.className=`block ${sub.type==="Lab"?"lab":""}`;
       if(isLive(b.t)) el.classList.add("live");
       el.innerHTML=`<strong>${sub.name}</strong><br><small>${b.t}</small>`;
-      el.onclick=()=>openModal(sub,b.t);
+      el.onclick=()=>openModal(sub,b.t,day); // Pass day information
     }
     timeline.appendChild(el);
   });
